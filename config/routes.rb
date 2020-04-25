@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'user/new'
+
   get '/signup', to: 'users#new', as: 'signup'
 
   root 'static_pages#home'

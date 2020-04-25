@@ -1,0 +1,15 @@
+<!-- app/views/shared/_error_messages_html.erb -->
+<!-- form 송신시의 에러메세지를 표시하기 위한 파셜 -->
+
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert alert-danger">
+      The form contains <%= pluralize(@user.errors.count, "error") %>.
+    </div>
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
